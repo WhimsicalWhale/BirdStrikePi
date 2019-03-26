@@ -15,5 +15,5 @@ camera.stop_preview()
 # take 5 pictures in a row
 camera.start_preview()
 for i in range(5):
-	camera.capture('/home/pi/BirdStrike/pictures/image%s.jpg' % i)
+	camera.capture('/home/pi/BirdStrikePi/pictures/image%s.jpg' % i)
 camera.stop_preview()
