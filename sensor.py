@@ -13,16 +13,20 @@ GPIO.setup(channel, GPIO.IN)
 camera = PiCamera()
 camera.rotation = 180
 camera.framerate = 90
+camera.resolution = '1280x720'
+camera.shutter_speed = 800
 
+
+home = os.getcwd()
 
 # what to do when sensor gets input
 def callback(channel):
         if GPIO.input(channel):
-            for i, filename in enumerate(camera.capture_continuous('%s/pictures/img{counter:03d}.jpg' % os.getcwd())):
+            for i, filename in enumerate(camera.capture_continuous('%s/pictures/img{counter:03d}.jpg' % home)):
                 if i == 15:
                     break
         else:
-            for i, filename in enumerate(camera.capture_continuous('%s/pictures/img{counter:03d}.jpg' % os.getcwd())):
+            for i, filename in enumerate(camera.capture_continuous('%s/pictures/img{counter:03d}.jpg' % home)):
                 if i == 15:
                     break
 
