@@ -9,7 +9,7 @@ camera = PiCamera()
 camera.rotation = 180
 
 # messing around with other settings
-camera.framerate = 60
+camera.framerate = 90
 
 '''
 # see what the camera sees for 3 secs
@@ -33,6 +33,7 @@ for filename in camera.capture_continuous('/home/pi/BirdStrikePi/pictures/img{co
 camera.stop_preview()
 '''
 
+# this section of code will continously take photos, deleting older ones as new ones are taken
 camera.start_preview()
 start = time.time()
 
