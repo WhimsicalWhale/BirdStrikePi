@@ -38,10 +38,10 @@ start = time.time()
 
 try:
     for i, filename in enumerate(camera.capture_continuous('%s/pictures/img{counter:03d}.jpg' % os.getcwd())):
-        print('%s' % filename, time.time() - start)
+        print(filename, time.time() - start)
         
-        if i == 15:
-            break
+        if i > 15:
+            os.remove(os.getcwd() + '/pictures/img%03d.jpg' % (i-15))
         
 finally:
     camera.stop_preview()
