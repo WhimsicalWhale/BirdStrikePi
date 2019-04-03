@@ -1,0 +1,5 @@
+# don't need to keep the videos we take in the repo
+*.h264
+
+# nor the images
+*.jpeg
